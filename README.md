@@ -89,4 +89,4 @@ The refactored code ran in about .21 and .01 seconds for All Stocks in 2017 and 
 
 - Refactored code shows incredible efficiency, as shown in by a drastic reduction in run time. Refactoring also allows for quick and easy additions without overcomplicating the code.  This project only has three parameters, but the addition of a tickerIndex can facilitate the addition of more parameters (such as Quarter Value, Ratios, etc.)
 
--One potential drawback to refactoring code lies in how effectively the code is explained for outside programmers to follow. If the code becomes too complicated and is poorly explained, it may be hard for it to maintain its function. This could result in erroneous results and could potential be more costly to fix.    
+- One potential drawback to refactoring code lies in how effectively the code is explained for outside programmers to follow. If the code becomes too complicated and is poorly explained, it may be hard for it to maintain its function. This could result in erroneous results and could potential be more costly to fix.    
