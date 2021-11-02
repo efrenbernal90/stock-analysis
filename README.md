@@ -11,8 +11,8 @@ Run scripts to check total volume and return values of *"Green Stocks"* for a sp
 ## Analysis and Challenges
 ###Original code
 Original subscripts for analysis of stocks ran nested loops. The outer loop runs through each ticker of the array, established as "tickers(i)", and the inner loop runs through the rows of data of the reference sheet. 
->...
-	For i = 0 To 11
+
+>For i = 0 To 11
             
             ticker = tickers(i)
             totalVolume = 0
@@ -48,11 +48,13 @@ Original subscripts for analysis of stocks ran nested loops. The outer loop runs
 
 These subscripts run around 1.79 seconds for All Stocks in 2017 and around 1.98 seconds for All Stocks in 2018
 
-![2017_All_Stocks_Analysis](Resources/2017_All_Stocks_Analysis)
+![2017_All_Stocks_Analysis](Resources/2017_All_Stocks_Analysis.png)
+
+![2018_All_Stocks_Analysis](Resources/2018_All_Stocks_Analysis.png)
 
 ### Refactored code
 
-
+The refactored code contains less loops and the addition of two arrays.  The loops were replaced with a new **tickerIndex**
 
 ### Analysis of Outcomes Based on Goals
 
