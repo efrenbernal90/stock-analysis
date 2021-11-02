@@ -45,6 +45,8 @@ Original subscripts for analysis of stocks ran nested loops. The outer loop runs
   	
 	Next i
 
+### Time Elapsed for Base Code
+
 These subscripts run around 1.79 seconds for All Stocks in 2017 and around 1.98 seconds for All Stocks in 2018
 
 ![2017_All_Stocks_Analysis](Resources/2017_All_Stocks_Analysis.png)
@@ -53,7 +55,7 @@ These subscripts run around 1.79 seconds for All Stocks in 2017 and around 1.98 
 
 ### Refactored code
 
-The refactored code contains 3 arrays that loop once through the code.  A **tickerIndex** was added into the newly created arrays to simplify the loop:
+The refactored code contains 3 arrays that loop once through the rows of data on the reference sheet.  A **tickerIndex** was added into the newly created arrays to simplify the loop:
 >
  	For i = 2 To RowCount
         
@@ -74,6 +76,8 @@ The refactored code contains 3 arrays that loop once through the code.  A **tick
             End If
     	
 	Next i
+
+### Time Elapsed for Refactored Code
 
 The refactored code ran in about .21 and .01 seconds for All Stocks in 2017 and 2018, respectively.
 
