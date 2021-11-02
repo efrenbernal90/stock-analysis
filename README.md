@@ -12,9 +12,9 @@ Run scripts to check total volume and return values of *"Green Stocks"* for a sp
 ###Original code
 Original subscripts for analysis of stocks ran nested loops. The outer loop runs through each ticker of the array, established as "tickers(i)", and the inner loop runs through the rows of data of the reference sheet. 
 
->For i = 0 To 11
-            
-            ticker = tickers(i)
+>...
+	For i = 0 To 11 
+	    ticker = tickers(i)
             totalVolume = 0
             '5) loop through rows in the data
                     
@@ -45,6 +45,7 @@ Original subscripts for analysis of stocks ran nested loops. The outer loop runs
                 End If
                     
             Next j
+  ...
 
 These subscripts run around 1.79 seconds for All Stocks in 2017 and around 1.98 seconds for All Stocks in 2018
 
@@ -54,9 +55,33 @@ These subscripts run around 1.79 seconds for All Stocks in 2017 and around 1.98 
 
 ### Refactored code
 
-The refactored code contains less loops and the addition of two arrays.  The loops were replaced with a new **tickerIndex**
+The refactored code contains 3 arrays that loop once through the code.  A **tickerIndex** was added into the newly created arrays to simplify the loop:
+>
+ 	For i = 2 To RowCount
+        
+            tickerVolume(tickerIndex) = tickerVolume(tickerIndex) + Cells(i, 8).Value
+        
+            If Cells(i - 1, 1).Value <> tickers(tickerIndex) And Cells(i, 1).Value = tickers(tickerIndex) Then
+        
+            tickerStartingPrices(tickerIndex) = Cells(i, 6).Value
+        
+            End If
+         
+            If Cells(i + 1, 1).Value <> tickers(tickerIndex) And Cells(i, 1).Value = tickers(tickerIndex) Then
+            
+            tickerEndingPrices(tickerIndex) = Cells(i, 6).Value
+          
+            tickerIndex = tickerIndex + 1
+            
+            End If
+    	
+	Next i
 
-### Analysis of Outcomes Based on Goals
+The refactored code ran in about .21 and .01 seconds for All Stocks in 2017 and 2018, respectively.
+
+![2017_Refactored_All_Stocks_Analysis](Resources/2017_Refactored_All_Stocks_Analysis.png)
+
+![2018_Refactored_All_Stocks_Analysis](Resources/2018_Refactored_All_Stocks_Analysis.png)
 
 ### Challenges and Difficulties Encountered
 
